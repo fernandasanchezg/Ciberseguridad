@@ -163,6 +163,7 @@ use exploit/multi/handler
 18- copio los archivos creados en la carpeta compartida
 19- la carpeta compartida también la comparto en windows
 20- verifico si los archivos quedaron en la carpeta compartida
+21- abro un archivo para que empiece la conexión
 
 
 
